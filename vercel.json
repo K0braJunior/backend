@@ -1,31 +1,20 @@
-
-{
-  "version": 2,
-  "builds": [
-    {
-      "src": "server.js",
-      "use": "@vercel/node",
-      "config": {
-        "includeFiles": ["config/**", ".env"]  
-      }
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "server.js",
-      "methods": ["GET", "POST", "PUT", "DELETE", "PATCH"]  
-    }
-  ]
- 
-}
-
   {
-    "rewrites": [
-      {
-        "source": "/(.*)",
-        "destination": "/"
-      }
+    "version": 2,
+    "builds": [
+        {
+            "src": "server.js",
+            "use": "@vercel/node",
+            "config": {
+                "includeFiles": [
+                    "dist/**"
+                ]
+            }
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "server.js"
+        }
     ]
-  }
-
+}
